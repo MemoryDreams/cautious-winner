@@ -82,11 +82,15 @@ button:hover {
     background-color: var(--background4);
     height: calc(var(--buttonheight) * 1.5);
     margin: 10px;
-    text-align: end;
+    text-align: right;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    overflow: hidden;
+    overflow-x: scroll;
+}
+
+::-webkit-scrollbar {
+  width:fit-content;
 }
 
 p {
