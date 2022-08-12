@@ -1,6 +1,6 @@
 const operandi = document.getElementById('operandi');
 const sum = document.getElementById('sum');
-let bottomText = '';
+let bottomText = '0';
 let num1 = 0;
 let num2 = 0;
 let result = 0;
@@ -14,15 +14,16 @@ function inputNumber(num) {
 }
 
 function setOperator(tool) {
-    if (bottomText !== '') {
+    if (bottomText !== '0') {
         num1 = num2;
         if (pointSet) {
             num2 = parseFloat(bottomText);
         } else {
             num2 = parseInt(bottomText);            
         }
-        bottomText = '';
-        pointSet = true;
+        pointSet = false; 
+        console.log(num2);
+        bottomText = '0';
         if (operator === 'none') {
             result = num2;
         } else {   
@@ -55,14 +56,14 @@ function setOperator(tool) {
 }
 
 function equal() { 
-    if (bottomText !== '') {
+    if (bottomText !== '0') {
         num1 = num2;
         if (pointSet) {
             num2 = parseFloat(bottomText);
         } else {
             num2 = parseInt(bottomText);            
         }
-        bottomText = '';
+        bottomText = '0';
         pointSet = true;  
         switch(operator) {
             case '+':
@@ -110,7 +111,7 @@ function getDevided() {
 function reset() {
     sum.textContent = '0';
     operandi.textContent = '0';
-    bottomText = '';
+    bottomText = '0';
     num1 = 0;
     num2 = 0;
     result = 0;
@@ -119,7 +120,7 @@ function reset() {
 }
 
 function swap() {
-    if (bottomText !== '') {
+    if (bottomText !== '0') {
         if (bottomText[0] == '-') {
             bottomText = bottomText.slice(1);
         } else {
@@ -130,7 +131,7 @@ function swap() {
 }
 
 function setPoint() {
-    if ((!pointSet) && (parseInt(bottomText) !== 0)) {
+    if ((!pointSet)) {
         pointSet = true;
         bottomText = bottomText + '.';
         operandi.textContent = bottomText;
