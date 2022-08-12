@@ -1,12 +1,11 @@
 :root {
-    --background1: #0d0621;
-    --background2: #171032;
-    --background3: #1c1943;
-    --background4: #27226b;
-    --foreground1: #434aa6;
-    --foreground2: #7a86c3;
+    --background1:rgb(16, 15, 30);
+    --background2:rgb(34, 32, 52);
+    --background3:rgb(59, 57, 80);
+    --background4:rgb(83, 81, 112);
+    --foreground1:rgb(203, 219, 252);
+    --foreground2:rgb(132, 126, 135);
     --font: #afb8dd;
-    --catborder: #00774c;
     --buttonheight: 40px;
     --buttonwidth: calc(var(--buttonheight) * 2);
     --gap: 10px;
@@ -19,17 +18,17 @@
 }
 
 body {
-    background: linear-gradient(90deg, var(--background2), var(--background4));
+    background: linear-gradient(90deg, var(--background1), var(--background3));
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 40px;
+    height: 100vh;
 }
 
 #main {
     width: calc((var(--buttonwidth) * 4) + (var(--gap) * 3));
     padding: 10px;
-    background-color: var(--background2);
+    background-color: var(--background3);
     color: var(--font);
     display: flex;
     flex-direction: column;
@@ -46,10 +45,11 @@ button {
     color: var(--font);
     font-size: 20px;
     font-family: monospace;
+    border-radius: 15px;
 }
 
 button:hover {
-    background-color: var(--foreground1);
+    background-color: var(--foreground2);
 }
 
 #zero {
@@ -73,13 +73,13 @@ button:hover {
 
 #operations {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     gap: var(--gap);
 }
 
 #screen {
     width: 100%;
-    background-color: var(--foreground1);
+    background-color: var(--background4);
     height: calc(var(--buttonheight) * 1.5);
     margin: 10px;
     text-align: end;
@@ -91,5 +91,5 @@ button:hover {
 p {
     width: 98%;
     font-family: monospace;
-    font-size: 18px;
+    font-size: 21px;
 }
