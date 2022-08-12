@@ -1,0 +1,95 @@
+:root {
+    --background1: #0d0621;
+    --background2: #171032;
+    --background3: #1c1943;
+    --background4: #27226b;
+    --foreground1: #434aa6;
+    --foreground2: #7a86c3;
+    --font: #afb8dd;
+    --catborder: #00774c;
+    --buttonheight: 40px;
+    --buttonwidth: calc(var(--buttonheight) * 2);
+    --gap: 10px;
+}
+
+*, ::before, ::after {
+    padding: 0;
+    margin: 0;
+    font-family: 'Times New Roman', Helvetica, sans-serif;
+}
+
+body {
+    background: linear-gradient(90deg, var(--background2), var(--background4));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+#main {
+    width: calc((var(--buttonwidth) * 4) + (var(--gap) * 3));
+    padding: 10px;
+    background-color: var(--background2);
+    color: var(--font);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+button {
+    height: var(--buttonheight);
+    width: var(--buttonwidth);
+    background-color: var(--background4);
+    border: 2px solid var(--background3);
+    color: var(--font);
+    font-size: 20px;
+    font-family: monospace;
+}
+
+button:hover {
+    background-color: var(--foreground1);
+}
+
+#zero {
+    width: calc(var(--buttonwidth) * 2 + var(--gap));
+}
+
+#pad {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    gap: var(--gap);
+}
+
+#numbers {
+    width: calc(var(--buttonwidth) * 3 + var(--gap) * 2);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
+}
+
+#operations {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: var(--gap);
+}
+
+#screen {
+    width: 100%;
+    background-color: var(--foreground1);
+    height: calc(var(--buttonheight) * 1.5);
+    margin: 10px;
+    text-align: end;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+p {
+    width: 98%;
+    font-family: monospace;
+    font-size: 18px;
+}
