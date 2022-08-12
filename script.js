@@ -8,12 +8,20 @@ let operator = 'none';
 let pointSet = false;
 
 function inputNumber(num) {
-    bottomText = bottomText + num;
-    console.log(bottomText);
+    if (parseInt(bottomText) == 0) {
+        bottomText = ' ' + num;
+    } else {
+        bottomText = bottomText + num;
+        console.log(bottomText);
+    }
     operandi.textContent = bottomText;
 }
 
 function setOperator(tool) {
+    if ((result === Infinity) && (parseInt(bottomText) === 0)) {
+        sum.textContent = "You can't operate on Infinity.";
+        return;
+    }
     if (bottomText !== '0') {
         num1 = num2;
         if (pointSet) {
@@ -139,7 +147,7 @@ function setPoint() {
 }
 
 function setPercent() {
-    if ((num2 !== 0) && (bottomText !== '') && (operator !== 'none')) {
+    if ((num2 !== 0) && (bottomText !== '0') && (operator !== 'none')) {
         let one = num2 / 100;
         console.log(num2 + ' ' + one);
         if (pointSet) {

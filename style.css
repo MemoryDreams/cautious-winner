@@ -86,10 +86,11 @@ button:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow: hidden;
 }
 
 p {
     width: 98%;
     font-family: monospace;
-    font-size: 21px;
+    font-size: 18px;
 }
