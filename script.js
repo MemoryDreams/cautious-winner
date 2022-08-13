@@ -8,7 +8,7 @@ let operator = 'none';
 let pointSet = false;
 
 function inputNumber(num) {
-    if (parseInt(bottomText) == 0) {
+    if ((parseInt(bottomText) === 0) && (!pointSet)) {
         bottomText = ' ' + num;
     } else {
         bottomText = bottomText + num;
@@ -48,9 +48,6 @@ function setOperator(tool) {
                 case '/':
                     result = getDevided();
                     break;
-                case '%':
-                    result = getPercent();
-                    break;
             }  
         }
         num2 = result;
@@ -72,7 +69,7 @@ function equal() {
             num2 = parseInt(bottomText);            
         }
         bottomText = '0';
-        pointSet = true;  
+        pointSet = false;  
         switch(operator) {
             case '+':
                 result = getSum();
@@ -86,9 +83,8 @@ function equal() {
             case '/':
                 result = getDevided();
                 break;
-            case '%':
-                result = getPercent();
-                break;
+            default:
+                result = num2;
         }  
         sum.textContent = result;
         operandi.textContent = '0';
